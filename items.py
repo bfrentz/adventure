@@ -31,7 +31,7 @@ class Rock(Weapon):
 class Dagger(Weapon):
     def __init__(self):
         self.name = "Dagger"
-        self.description = "A small, sharp dagger, likely lost by bandits or thieves." 
+        self.description = "A small, sharp dagger, favored by bandits or thieves because of its easily concealed size." 
         self.damage = 15
         self.value = 30
 
