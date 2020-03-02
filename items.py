@@ -1,9 +1,12 @@
 # Items module
 # Contains classes for all items used in the game, like weapons and consumables
 
+# Weapons
 class Weapon:
 	"""
 	Basic weapon class
+
+	Provides names, descriptions, damage per attack, and sale value of the different weapons.
 	"""
     def __init__(self):
         raise NotImplementedError
@@ -11,18 +14,25 @@ class Weapon:
     def __str__(self):
         return self.name
 
+class Stick(Weapon):
+	def __init__(self):
+		self.name = "Stick"
+		self.description = "A fallen branch from a nearby tree. Could be used like a sword in a pinch."
+		self.damage = 3
+		self.value = 1
+
 class Rock(Weapon):
     def __init__(self):
         self.name = "Rock"
         self.description = "A fist-sized rock. Great for hitting things."
-        self.damage = 3
+        self.damage = 5
         self.value = 1
 
 class Dagger(Weapon):
     def __init__(self):
         self.name = "Dagger"
         self.description = "A small, sharp dagger, likely lost by bandits or thieves." 
-        self.damage = 10
+        self.damage = 15
         self.value = 30
 
 class RustySword(Weapon):
@@ -53,6 +63,42 @@ class LongSword(Weapon):
 		self.damage = 60
 		self.value = 200
 
+# Consumables
+class Consumable:
+	"""
+	Basic consumable class
+
+	Provides names, healing value, and sale value of the different consumable item.
+	"""
+    def __init__(self):
+        raise NotImplementedError
+
+    def __str__ (self):
+        return "{} (+{} HP)".format(self.name, self.healing_value)
+
+class Berries(Consumable):
+	def __init__(self):
+		self.name = "Berries"
+		self.healing_value = 10
+		self.value = 12
+
+class Mushrooms(Consumable):
+	def __init__(self):
+		self.name = "Mushrooms"
+		self.healing_value = 8
+		self.value = 5
+
+class Toadstools(Consumable):
+	def __init__(self):
+		self.name = "Toadstools"
+		self.healing_value = -10
+		self.value = 10
+
+class Potion(Consumable):
+	def __init__(self):
+		self.name = "Potion"
+		self.healing_value = 100
+		self.value = 150
 
 
 if __name__ == "__main__":
